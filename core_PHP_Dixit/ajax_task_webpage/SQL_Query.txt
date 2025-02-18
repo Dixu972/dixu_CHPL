@@ -1,0 +1,53 @@
+// database create
+
+CREATE DATABASE CHPL_Medical_DB
+
+// table
+
+CREATE TABLE logo_title (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  logo_url VARCHAR(255) NOT NULL,
+  title TEXT NOT NULL,
+);
+
+INSERT INTO logo_title (logo_url, title) VALUES (
+  'https://marketplace.canva.com/EAE8fLYOzrA/1/0/1600w/canva-health-care-bO8TgMWVszg.jpg',
+  'Medical Store');
+
+
+// medicine table database
+
+CREATE TABLE medicine (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  medicine_name VARCHAR(255) NOT NULL,
+  description TEXT,
+  price DECIMAL(10, 2) NOT NULL,
+  image_url VARCHAR(255)
+);
+
+INSERT INTO medicine (medicine_name, description, price, image_url)
+VALUES
+  ('Crocin', 'Pain reliever and fever reducer', 50.00, 'https://media.istockphoto.com/id/1220626626/vector/pharmacy.jpg?s=1024x1024&w=is&k=20&c=sKuLXGhKD7QhfIk0Sd-9f46sFZpn__Olva_5lj4MN9Y='),
+  ('Digene', 'Antacid and anti-gas medication', 75.00, 'https://img.freepik.com/free-photo/medicine-capsules-global-health-with-geometric-pattern-digital-remix_53876-126742.jpg'),
+  ('Augmentin', 'Antibiotic for bacterial infections', 200.00, 'https://t4.ftcdn.net/jpg/02/81/42/77/360_F_281427785_gfahY8bX4VYCGo6jlfO8St38wS9cJQop.jpg'),
+  ('Corex', 'Cough syrup for dry cough', 40.00, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEL3-iNvrv_DpFuJ_4qX1fcz5CVXeOhi_udg&s'),
+  ('Combiflam', 'Pain reliever and anti-inflammatory', 60.00, 'https://cdn.pixabay.com/photo/2020/10/02/09/01/tablets-5620566_1280.jpg'),
+  ('Dolo 650', 'Pain reliever and fever reducer', 30.00, 'https://www.pol-eko.com.pl/img/img_blog/medicines-dont-like-high-temperatures-1.webp');
+
+
+//contact us 
+
+CREATE TABLE contact_us (
+  id INT AUTO_INCREMENT,
+  address VARCHAR(255) NOT NULL,
+  phone VARCHAR(20) NOT NULL,
+  email_id VARCHAR(100) NOT NULL,
+  PRIMARY KEY (id));
+
+  INSERT INTO `contact_us` ( `address`, `phone`, `email_id`) VALUES ( '123 Main St, Vastral, Ah\'bad', '9722310904', 'medicine@gmail.com');
+
+//
+
+CREATE TABLE about_us (id INT PRIMARY KEY AUTO_INCREMENT , img_path VARCHAR(100) NOT NULL, description TEXT);
+
+INSERT INTO `about_us` (`id`, `img_path`, `description`) VALUES (NULL, 'about-medicine.png', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur sequi, voluptatum porro possimus minima suscipit hic dolorem quaerat nobis nulla sint vel, voluptatibus ullam, rerum odio mollitia perspiciatis error cumque corrupti assumenda ex facere. Maiores voluptates voluptate aspernatur deserunt? Nihil hic fugiat quidem facere voluptatibus eveniet aspernatur tempore obcaecati ipsam.');
